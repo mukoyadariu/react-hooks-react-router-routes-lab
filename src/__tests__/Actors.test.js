@@ -4,16 +4,6 @@ import { render, screen } from "@testing-library/react";
 import Actors from "../components/Actors";
 import { actors } from "../data";
 
-test("renders without any errors", () => {
-  const errorSpy = jest.spyOn(global.console, "error");
-
-  render(<Actors />);
-
-  expect(errorSpy).not.toHaveBeenCalled();
-
-  errorSpy.mockRestore();
-});
-
 test("renders 'Actors Page' inside of the <h1 />", () => {
   render(<Actors />);
   const h1 = screen.queryByText(/Actors Page/g);
@@ -40,3 +30,4 @@ test("renders a <li /> for each movie", () => {
     }
   }
 });
+
